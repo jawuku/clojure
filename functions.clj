@@ -5,7 +5,7 @@
  "Multiplies series of integers from 1 to x
   (factorial x) equal to (* 1 2 3 4 ... x)
  Blank parameter assumes value of 1"
- ([] 1)
+ ([] (factorial 1)
   ([x] (reduce *' (take x (map inc (range))))))
 
 (factorial 100)
