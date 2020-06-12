@@ -1,8 +1,23 @@
 (ns functions)
 
 ;; Factorial function
-(defn factorial [x] (reduce *' (take x (map inc (range)))))
+(defn factorial
+ "Multiplies series of integers from 1 to x
+  (factorial x) equal to (* 1 2 3 4 ... x)
+ Blank parameter assumes value of 1"
+ ([] 1)
+  ([x] (reduce *' (take x (map inc (range))))))
+
 (factorial 100)
+
+;; Body Mass Index (BMI) Calculation
+(defn bmi
+  "Body Mass Index (BMI) = weight(kg) / (height(m) ^ 2)
+  Format: (bmi weight height)"
+  [weight height]
+  (/ weight ( #(* % %) height)))
+
+(bmi 60 1.67)
 
 ;; ClojureBridge Exercises
 ;; Exercise 1 - Basic Arithmetic
@@ -10,7 +25,7 @@
 ;  Convert this value from minutes to seconds.
 (def minutes 32)
 (def sec (* minutes 60))
-sec
+(println sec)
 
 ;; EXERCISE 2 [BONUS]: Minutes and seconds
 ;  Convert 1000 seconds to minutes and seconds.
