@@ -5,9 +5,9 @@ It is designed to run on a USB stick, but here I am personally running it in a v
 
 Here are the steps that I took (after a bit of trial and error), to install a Clojure development environment using Neovim.
 
-I was inspired by an article on Oliver Caldwell's blog [Getting started with Clojure, Neovim and Conjure in minutes](https://oli.me.uk/getting-started-with-clojure-neovim-and-conjure-in-minutes/)
+I was inspired by an article on Oliver Caldwell's blog [Getting started with Clojure, Neovim and Conjure in minutes](https://oli.me.uk/getting-started-with-clojure-neovim-and-conjure-in-minutes/).
 
-I have added some other features
+I have added some other features:
 
 - [x] [Airline](https://github.com/vim-airline/vim-airline) status bar
 - [x] [Rainbow Parentheses](https://github.com/junegunn/rainbow_parentheses.vim)
