@@ -214,11 +214,11 @@ map <C-n> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " Define Nerdtree arrows
-let g:NERDTreeDirArrowExpandable = '▸'
-let g:NERDTreeDirArrowCollapsible = '▾'
+let g:NERDTreeDirArrowExpandable = '▸' " unicode character U+25B8 'black right-pointing small triangle'
+let g:NERDTreeDirArrowCollapsible = '▾' " unicode U+25BE 'black down-pointing small triangle'
 
 " Indent line Character
-let g:indentLine_char = '┆'
+let g:indentLine_char = '┆' " unicode U+2506 'box drawings light triple dash vertical'
 
 " Python3 program location
 let g:python3_host_prog='/usr/local/bin/python3.7'
@@ -234,8 +234,8 @@ nmap <silent> [c <Plug>(ale_previous_wrap)
 nmap <silent> ]c <Plug>(ale_next_wrap)
 "
 " Change ALE warning signs
-let g:ale_sign_error = '✘' " unicode U+2718 Heavy Ballot X
-let g:ale_sign_warning = '⚠' " unicode U+26A0 Warning Sign
+let g:ale_sign_error = '✘' " unicode U+2718 'Heavy Ballot X'
+let g:ale_sign_warning = '⚠' " unicode U+26A0 'Warning Sign'
 "
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_lint_on_insert_leave = 1
