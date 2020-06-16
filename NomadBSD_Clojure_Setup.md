@@ -86,14 +86,19 @@ cd joker<press TAB>
 ./build.sh
 sudo cp joker /usr/local/bin
 ```
-### Install Clj-Kondo
+### Install clj-kondo
 No FreeBSD binaries exist, but can install via yarn
 ```sh
 # N.B. automatically uninstalls firefox
 sudo pkg install node12 yarn-node12
 sudo yarn global add clj-kondo # installed in /usr/local/bin
 ```
-## install Neovim and helpers
+### Install another browser
+I chose Iridium Browser, a privacy-focused clone of Chromium.
+```sh
+sudo pkg install iridium-browser
+```
+## Install Neovim and helpers
 ```sh
 sudo pkg install neovim python37
 sudo pkg install ccls uncrustify # only if you want C/C++ linting and formatting
