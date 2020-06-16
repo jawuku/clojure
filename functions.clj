@@ -1,23 +1,22 @@
 (ns functions)
 
-;; Factorial function
 (defn factorial
- "Multiplies series of integers from 1 to x
+ "factorial function multiplies a series of integers from 1 to x
   (factorial x) equal to (* 1 2 3 4 ... x)
- Blank parameter assumes value of 1"
- ([] (factorial 1)
-  ([x] (reduce *' (take x (map inc (range))))))
+  note that (factorial 0) = 1"
+  ([] (factorial 0))
+  ([x] (reduce *' (map inc (range x)))))
 
-(factorial 100)
+(factorial 50)
 
-;; Body Mass Index (BMI) Calculation
 (defn bmi
-  "Body Mass Index (BMI) = weight(kg) / (height(m) ^ 2)
+  "Calculates Body Mass Index (BMI)
+  BMI = weight(kg) / (height(m) ^ 2)
   Format: (bmi weight height)"
   [weight height]
   (/ weight ( #(* % %) height)))
 
-(bmi 60 1.67)
+(bmi 80 1.82)
 
 ;; ClojureBridge Exercises
 ;; Exercise 1 - Basic Arithmetic
