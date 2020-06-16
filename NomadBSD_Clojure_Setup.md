@@ -1,5 +1,6 @@
 # Set up Clojure development in Neovim
 ## On a fresh [NomadBSD](https://nomadbsd.org) installation. Should also apply to other FreeBSDs.
+![Neovim running Conjure in NomadBSD](Clojure_Neovim_NomadBSD.png)
 [NomadBSD](https://nomadbsd.org) is a FreeBSD release running on the Openbox window manager.
 It is designed to run on a USB stick, but here I am personally running it in a virtual machine in [VirtualBox](https://www.virtualbox.org).
 
