@@ -12,11 +12,11 @@ I have added some other features:
 
 - [x] [Airline](https://github.com/vim-airline/vim-airline) status bar
 - [x] [Rainbow Parentheses](https://github.com/junegunn/rainbow_parentheses.vim)
-- [x] [Gruvbox](https://github.com/morhetz/gruvbox) and [Tender](https://github.com/jacoborus/tender.vim) Colour schemes
+- [x] [Gruvbox](https://github.com/morhetz/gruvbox) or [Tender](https://github.com/jacoborus/tender.vim) Colour schemes
 - [x] Some C/C++ and Python support (optional)
 - [x] [Nerdtree](https://github.com/preservim/nerdtree) file browser
 
-Things to add in the future (as I learn more of Neovim)
+Things to add in the future (as I learn more of FreeBSD and Neovim)
 
 - [ ] Nodejs which does not uninstall Firefox
 - [ ] Easymotion
