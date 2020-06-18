@@ -55,10 +55,11 @@ To make it permanent, you need the following lines in /etc/fstab:
 
 	fdesc	/dev/fd		fdescfs		rw	0	0
 	proc	/proc		procfs		rw	0	0
+### Thus to follow this advice, do the following:
 ```sh
-# thus
 sudo mount -t fdescfs fdesc /dev/fd # enables now
 sudo echo 'fdesc  /dev/fd    fdescfs    rw 0 0' >> /etc/fstab # enables at boot
+# proc is already enabled
 ```
 ### Installing Joker from source
 Joker is a small implementation of Clojure, written in Go.
