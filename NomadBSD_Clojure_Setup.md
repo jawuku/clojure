@@ -35,7 +35,7 @@ sudo pkg upgrade
 ```
 ### Install Clojure Binaries
 ```sh
-sudo pkg install leiningen clojure rlwrap
+sudo pkg install leiningen clojure rlwrap wget
 ```
 ### Java OpenJDK 8 post-install message
 =====
@@ -64,13 +64,13 @@ Joker is a small implementation of Clojure, written in Go.
 There are no binaries for FreeBSD, thus will have to install from source.
 Install latest version if different from below.
 ```sh
+cd ~/Downloads
 wget https://github.com/candid82/joker/archive/v0.15.5.tar.gz
 tar xvf v0.15.5.tar.gz
 ```
 ### Install [Go Language](https://www.golang.org/dl)
 Download and extract go binaries (current version 1.14.4 at time of writing)
 ```sh
-cd ~/Downloads
 wget https://dl.google.com/go/go1.14.4.freebsd-amd64.tar.gz
 sudo tar -C /usr/local -xzf go1.14.4.freebsd-amd64.tar.gz
 ```
