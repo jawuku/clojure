@@ -5,6 +5,8 @@
 It is designed to run on a USB stick, but here I am personally running it in a virtual machine in [VirtualBox](https://www.virtualbox.org).
 **(Update 18 June 2020 - I have also now tested it on a hard disk installation.)**
 
+The font shown in the screen shot above is "Source Code Pro Regular". In NomadBSD, this already has the Powerline symbols set up (the angular blue symbols in the status lines). If your setup looks odd, install the powerline-fonts package (**sudo pkg install powerline-fonts**)
+
 Here are the steps that I took (after a bit of trial and error), to install a Clojure development environment using Neovim.
 
 I was inspired by an article on Oliver Caldwell's blog [Getting started with Clojure, Neovim and Conjure in minutes](https://oli.me.uk/getting-started-with-clojure-neovim-and-conjure-in-minutes/).
