@@ -285,7 +285,8 @@ Then press <CTRL-D> to exit the clj REPL.
   cider/cider-nrepl {:mvn/version "0.24.0"}}}
 ```
 Then create the following shell script:
-Call it something like ~/.local/bin/conjure-repl and make it executable, i.e chmod +x ~/.local/bin/conjure-repl
+Call it something like **~/.local/bin/conjure-repl** and make it executable, i.e
+	**chmod +x ~/.local/bin/conjure-repl**
 ```sh
 #!/bin/sh
 
