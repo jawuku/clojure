@@ -101,7 +101,7 @@ sudo pkg install iridium-browser
 ```
 ## Install Neovim and helpers
 ```sh
-sudo pkg install neovim py37-pip
+sudo pkg install neovim py37-pip xclip
 sudo pkg install ccls uncrustify # only if you want C/C++ linting and formatting
 python3.7 -m pip install --user pynvim yapf flake8 # for python linting and formatting
 
@@ -116,8 +116,8 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 ```
 
-### Install init.vim
-### Copy and paste into ~/.config/nvim/init.vim
+### Install init.vim - run nvim, then
+### Copy and paste the following into ~/.config/nvim/init.vim
 ```vim
 " Specify a directory for plugins.
 call plug#begin(stdpath('data') . '/plugged')
@@ -264,6 +264,11 @@ let g:gruvbox_italic = 1
 let g:gruvbox_contrast_light = 'medium'
 set background=dark
 colorscheme gruvbox
+```
+### Save file, and exit
+### Issue the following command to install the neovim plugins:
+```sh
+nvim -c 'PlugInstall|UpdateRemotePlugins|q'
 ```
 ## Set up repl for Conjure
 ### Add to ~/.clojure/deps.edn:
