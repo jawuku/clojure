@@ -271,6 +271,12 @@ colorscheme gruvbox
 nvim -c 'PlugInstall|UpdateRemotePlugins|q'
 ```
 ## Set up repl for Conjure
+
+### Run clj, the command line binary to set up initial config file:
+```sh
+clj
+```
+Then press <CTRL-D> to exit the clj REPL.
 ### Add to ~/.clojure/deps.edn:
 ```clj
 {:deps
@@ -279,7 +285,7 @@ nvim -c 'PlugInstall|UpdateRemotePlugins|q'
   cider/cider-nrepl {:mvn/version "0.24.0"}}}
 ```
 Then create the following shell script:
-Call it something like conjure-repl.sh and make it executable.
+Call it something like ~/.local/bin/conjure-repl and make it executable, i.e chmod +x ~/.local/bin/conjure-repl
 ```sh
 #!/bin/sh
 
@@ -295,4 +301,5 @@ Run this script in a separate terminal or tab before running neovim and loading 
 ## 2. Open Clojure file in another terminal or tab, in Neovim
 
 # All done!
-Please send me feedback on any suggestions or ideas that you have, to enhance the setup
+Please send me feedback on any suggestions or ideas that you have, to enhance the setup, or any new tools which could be used.
+Thank you.
