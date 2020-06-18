@@ -285,8 +285,9 @@ Then press <CTRL-D> to exit the clj REPL.
   cider/cider-nrepl {:mvn/version "0.24.0"}}}
 ```
 Then create the following shell script:
-Call it something like **~/.local/bin/conjure-repl** and make it executable, i.e
-	**chmod +x ~/.local/bin/conjure-repl**
+Call it something like **~/.local/bin/conjure-repl** and make it executable, i.e.
+	
+**chmod +x ~/.local/bin/conjure-repl**
 ```sh
 #!/bin/sh
 
@@ -296,9 +297,9 @@ clj -m nrepl.cmdline \
 ```
 Run this script in a separate terminal or tab before running neovim and loading the .clj file.
 
-## Summary - to use conjure whenever you are editing a Clojure file:
+## Summary - to use Conjure whenever you are editing a Clojure file:
 
-## 1. Run conjure-repl.sh in separate terminal
+## 1. Run conjure-repl in a separate terminal
 ## 2. Open Clojure file in another terminal or tab, in Neovim
 
 # All done!
