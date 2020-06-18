@@ -3,6 +3,7 @@
 ![Neovim running Conjure in NomadBSD](Clojure_Neovim_NomadBSD.png)
 [NomadBSD](https://nomadbsd.org) is a FreeBSD release running on the Openbox window manager.
 It is designed to run on a USB stick, but here I am personally running it in a virtual machine in [VirtualBox](https://www.virtualbox.org).
+**(Update 18 June 2020 - I have also now tested it on a hard disk installation.)**
 
 Here are the steps that I took (after a bit of trial and error), to install a Clojure development environment using Neovim.
 
@@ -77,7 +78,7 @@ sudo tar -C /usr/local -xzf go1.14.4.freebsd-amd64.tar.gz
 Add /usr/local/go/bin to PATH (either with command below,
 or manual editing of ~/.profile)
 ```sh
-echo 'export PATH=$PATH:/usr/local/go/bin' >> ~/.profile
+echo 'export PATH=$PATH:/usr/local/go/bin:$HOME/.local/bin/' >> ~/.profile
 source ~/.profile
 ```
 ### Compile Joker binary
@@ -89,27 +90,28 @@ sudo cp joker /usr/local/bin
 ### Install clj-kondo
 No FreeBSD binaries exist, but can install via yarn
 ```sh
-# N.B. automatically uninstalls firefox
+# N.B. this might automatically uninstall firefox, which happened to me recently, but might not any more.
 sudo pkg install node12 yarn-node12
 sudo yarn global add clj-kondo # installed in /usr/local/bin
 ```
-### Install another browser
+### Install another browser, if Firefox was uninstalled
 I chose Iridium Browser, a privacy-focused clone of Chromium.
 ```sh
 sudo pkg install iridium-browser
 ```
 ## Install Neovim and helpers
 ```sh
-sudo pkg install neovim python37
+sudo pkg install neovim py37-pip
 sudo pkg install ccls uncrustify # only if you want C/C++ linting and formatting
 python3.7 -m pip install --user pynvim yapf flake8 # for python linting and formatting
-# TODO - find out how to add pip binaries to PATH.
+
 yarn global add neovim # for neovim's nodejs internal use (would be needed for future coc.nvim)
-mkdir -p ~/.config/nvim
 ```
 
 ### Install vim-plug
 ```sh
+mkdir -p ~/.config/nvim
+
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 ```
@@ -288,3 +290,4 @@ Run this script in a separate terminal or tab before running neovim and loading 
 ## 2. Open Clojure file in another terminal or tab, in Neovim
 
 # All done!
+Please send me feedback on any suggestions or ideas that you have, to enhance the setup
