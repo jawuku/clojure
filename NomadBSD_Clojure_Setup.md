@@ -1,4 +1,4 @@
-# Set up Clojure development in Neovim
+# Set up Clojure development in Neovim (updated Sep 2020)
 ## On a fresh [NomadBSD](https://nomadbsd.org) installation. Should also apply to other FreeBSDs.
 ![Neovim running Conjure in NomadBSD](Clojure_Neovim_NomadBSD.png)
 [NomadBSD](https://nomadbsd.org) is a FreeBSD release running on the Openbox window manager.
@@ -69,14 +69,14 @@ There are no binaries for FreeBSD, thus will have to install from source.
 Install latest version if different from below.
 ```sh
 cd ~/Downloads
-wget https://github.com/candid82/joker/archive/v0.15.5.tar.gz
-tar xvf v0.15.5.tar.gz
+wget https://github.com/candid82/joker/archive/v0.15.6.tar.gz
+tar xvf v0.15.6.tar.gz
 ```
 ### Install [Go Language](https://www.golang.org/dl)
-Download and extract go binaries (current version 1.14.4 at time of writing)
+Download and extract go binaries (current version 1.15.2 at time of writing)
 ```sh
-wget https://dl.google.com/go/go1.14.4.freebsd-amd64.tar.gz
-sudo tar -C /usr/local -xzf go1.14.4.freebsd-amd64.tar.gz
+wget https://dl.google.com/go/go1.15.2.freebsd-amd64.tar.gz
+sudo tar -C /usr/local -xzf go1.15.2.freebsd-amd64.tar.gz
 ```
 Add /usr/local/go/bin to PATH (either with command below,
 or manual editing of ~/.profile)
@@ -144,7 +144,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'w0rp/ale'
 
 "Conjure
-Plug 'Olical/conjure', { 'tag': 'v3.4.0'}
+Plug 'Olical/conjure', { 'tag': 'v4.5.0'}
 
 "Rainbow Parentheses
 Plug 'junegunn/rainbow_parentheses.vim'
