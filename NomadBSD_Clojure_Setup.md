@@ -285,7 +285,7 @@ Then press <CTRL-D> to exit the clj REPL.
 {:deps
  {org.clojure/clojure {:mvn/version "1.10.1"}
   nrepl {:mvn/version "0.7.0"}
-  cider/cider-nrepl {:mvn/version "0.24.0"}}}
+  cider/cider-nrepl {:mvn/version "0.25.2"}}}
 ```
 Then create the following shell script:
 Call it something like **~/.local/bin/conjure-repl** and make it executable, i.e.
