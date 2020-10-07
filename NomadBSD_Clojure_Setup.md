@@ -3,7 +3,9 @@
 ![Neovim running Conjure in NomadBSD](Clojure_Neovim_NomadBSD.png)
 [NomadBSD](https://nomadbsd.org) is a FreeBSD release running on the Openbox window manager.
 It is designed to run on a USB stick, but here I am personally running it in a virtual machine in [VirtualBox](https://www.virtualbox.org).
-**(Update 18 June 2020 - I have also now tested it on a hard disk installation.)**
+I have also tested this on a hard disk installation.
+
+**(Update 07 Oct 2020 - new joker version 0.15.7. Also some notes on Paravim.)**
 
 The font shown in the screen shot above is "Source Code Pro Regular". In NomadBSD, this already has the Powerline symbols set up (the angular blue symbols in the status lines). If your setup looks odd, install the powerline-fonts package (**sudo pkg install powerline-fonts**), and change the font in your terminal.
 
@@ -21,7 +23,6 @@ I have added some other features:
 
 Things to add in the future (as I learn more of FreeBSD and Neovim)
 
-- [ ] Nodejs which does not uninstall Firefox
 - [ ] Easymotion
 - [ ] Vim-sexp
 - [ ] Vim-clap
@@ -69,8 +70,8 @@ There are no binaries for FreeBSD, thus will have to install from source.
 Install latest version if different from below.
 ```sh
 cd ~/Downloads
-wget https://github.com/candid82/joker/archive/v0.15.6.tar.gz
-tar xvf v0.15.6.tar.gz
+wget https://github.com/candid82/joker/archive/v0.15.7.tar.gz
+tar xvf v0.15.7.tar.gz
 ```
 ### Install [Go Language](https://www.golang.org/dl)
 Download and extract go binaries (current version 1.15.2 at time of writing)
@@ -300,11 +301,34 @@ clj -m nrepl.cmdline \
 ```
 Run this script in a separate terminal or tab before running neovim and loading the .clj file.
 
+### As an alternative, without altering the deps.edn file, simply supply the parameters in the command
+```sh
+#!/bin/sh
+
+clj -Sdeps '{:deps {nrepl {:mvn/version "0.7.0"} cider/cider-nrepl {:mvn/version "0.25.2"}}}' \
+    -m nrepl.cmdline \
+    --middleware '["cider.nrepl/cider-middleware"]' \
+    --interactive
+```
+
 ## Summary - to use Conjure whenever you are editing a Clojure file:
 
 ## 1. Run conjure-repl in a separate terminal
 ## 2. Open Clojure file in another terminal or tab, in Neovim
 
-# All done!
+# P.S. An alternative Vim-based Clojure editor: Paravim
+
+## Paravim is an editor by Zach Oakes, which replicates a live REPL in the embedded Vim editor.
+
+[Paravim Webpage](https://sekao.net/paravim/clj/)
+
+## Run this command in the directory of your project:
+```sh
+clojure -Sdeps "{:deps {paravim {:mvn/version \""RELEASE\""}}}" -m paravim.start
+```
+## Or, if yoy are running a Leiningen project, have a look at this sample project.clj:
+
+https://gist.github.com/oakes/d85d6f9013d063b07896ffd8f6733a19
+
 Please send me feedback on any suggestions or ideas that you have, to enhance the setup, or any new tools which could be used.
 Thank you.
