@@ -322,6 +322,10 @@ clj -Sdeps '{:deps {nrepl {:mvn/version "0.7.0"} cider/cider-nrepl {:mvn/version
 
 [Paravim Webpage](https://sekao.net/paravim/clj/)
 
+### An accompanying YouTube video:
+
+[Paravim - A parasitic editor for Clojure](https://youtube.com/watch?v=BBw6ZwWFXwQ)
+
 ## Run this command in the directory of your project:
 ```sh
 clojure -Sdeps "{:deps {paravim {:mvn/version \""RELEASE\""}}}" -m paravim.start
