@@ -330,7 +330,7 @@ clj -Sdeps '{:deps {nrepl {:mvn/version "0.7.0"} cider/cider-nrepl {:mvn/version
 ```sh
 clojure -Sdeps "{:deps {paravim {:mvn/version \""RELEASE\""}}}" -m paravim.start
 ```
-## Or, if yoy are running a Leiningen project, have a look at this sample project.clj:
+## Or, if you are running a Leiningen project, have a look at this sample project.clj:
 
 https://gist.github.com/oakes/d85d6f9013d063b07896ffd8f6733a19
 
