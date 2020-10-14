@@ -266,7 +266,7 @@ let g:ale_fixers = {
 " Gruvbox
 let g:gruvbox_italic = 1
 let g:gruvbox_contrast_light = 'medium'
-set background=dark
+set background=light
 colorscheme gruvbox
 ```
 ### Save file, and exit
@@ -276,32 +276,11 @@ nvim -c 'PlugInstall|UpdateRemotePlugins|q'
 ```
 ## Set up repl for Conjure
 
-### Run clj, the command line binary to set up initial config file:
-```sh
-clj
-```
-Then press <CTRL-D> to exit the clj REPL.
-### Add to ~/.clojure/deps.edn:
-```clj
-{:deps
- {org.clojure/clojure {:mvn/version "1.10.1"}
-  nrepl {:mvn/version "0.7.0"}
-  cider/cider-nrepl {:mvn/version "0.25.2"}}}
-```
-Then create the following shell script:
+### Create the following shell script:
+
 Call it something like **~/.local/bin/conjure-repl** and make it executable, i.e.
 	
 **chmod +x ~/.local/bin/conjure-repl**
-```sh
-#!/bin/sh
-
-clj -m nrepl.cmdline \
-    --middleware "[cider.nrepl/cider-middleware]" \
-    --interactive
-```
-Run this script in a separate terminal or tab before running neovim and loading the .clj file.
-
-### As an alternative, without altering the deps.edn file, simply supply the parameters in the command
 ```sh
 #!/bin/sh
 
