@@ -5,7 +5,11 @@
   (factorial x) equal to (* 1 2 3 4 ... x)
   note that (factorial 0) = 1"
   ([] (factorial 0))
-  ([x] (reduce *' (map inc (range x)))))
+  ([x] (->>
+         (range)
+         (take x)
+         (map inc)
+         (reduce *'))))
 
 (factorial 50)
 
