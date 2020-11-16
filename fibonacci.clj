@@ -1,6 +1,8 @@
 (ns fibonacci)
 
 (defn fibonacci [n]
+"Return fibonacci number for `n` iterations
+Format: (fibonacci n)" 
   (let [a (atom 0), b (atom 1), added (atom 0)]
     (dotimes [i (dec n)]
       (reset! added ( #(+ %1 %2) @a @b))
@@ -9,12 +11,13 @@
     @b))
 
 (defn fib-vector
-"Gives fibonacci number for `n` iterations in a vector"
+"Gives fibonacci number for `n` iterations as a vector
+Format: (fib-vector n)"
 [n]
   (let [a (atom 0)
         b (atom 1)
         total (atom 0)
-        fib_array (atom [0])]
+        fib-array (atom [0])]
 ;; performs additions using mutable variables
 ;; adds each calculation to the end of a vector
     (loop [i 1]
@@ -22,9 +25,9 @@
         (reset! total ( #(+' %1 %2) @a @b))
         (reset! a @b)
         (reset! b @total)
-        (swap! fib_array conj @total)
+        (swap! fib-array conj @total)
         (recur (inc i))))
-    @fib_array))
+    @fib-array))
 
 (fibonacci 10)
 ; => 55
