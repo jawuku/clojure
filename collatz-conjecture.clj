@@ -14,11 +14,11 @@
         (collatz (/ n 2)))
       (do
         (swap! steps inc)
-        (collatz (+ (* 3 n) 1))))
+        (collatz (inc (* 3 n)))))
 ;; stops accumulation of steps in subsequent function calls
     (do
       (reset! steps-return @steps)
       (reset! steps 0)))
-    @steps-return)
+  @steps-return)
 
 (collatz 12)
