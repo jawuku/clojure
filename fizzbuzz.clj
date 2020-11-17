@@ -5,9 +5,9 @@
 Displays Fizz for numbers divisible by 3,
 Buzz for numbers divisible by 5,
 FizzBuzz for numbers both divisible by 3 and 5.
-Defaults to 1000 if no number specified.
+Defaults to 100 if no number specified.
 Format: (fb-series n)"
-  ([] (fb-series 1000))
+  ([] (fb-series (inc (int (* (rand) 100)))))
   ([n] 
     (dotimes [i n]  
       (cond
