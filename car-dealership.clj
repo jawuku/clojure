@@ -1,4 +1,4 @@
-(ns car-dearlership
+(ns car-dealership
   (:require [clojure.string :as cs]))
 
 ;; car database
@@ -51,7 +51,7 @@ if correct coupon code entered and sufficient budget.
 Format: (car-deals budget coupon-code)"  
 [budget code]
 
-  (println "Welcome to Our Car Deals")
+  (println "\nWelcome to Our Car Deals")
   (println "------------------------")
   (newline)
 
@@ -78,3 +78,24 @@ Format: (car-deals budget coupon-code)"
     (println (str "Sorry, '" code "' isn't a valid coupon code.")))
   (println "Here are your available prices:")
   @cars-chg)
+
+;; with valid coupons
+(car-deals 103423 "clj-Cars")
+
+(car-deals 63522 "Clj-CARS")
+
+(car-deals 28519 "Clj-cars")
+
+(car-deals 18934 "Clj-cars")
+
+;; coupons invalid
+(car-deals 100000 "clj-carZ")
+
+(car-deals 60000 "python3-cars")
+
+(car-deals 20000 "js-cars")
+
+(car-deals 10000 "commodore-basic-v2-cars")
+
+;; wrong order
+(car-deals "clj-cars" 1000000)
