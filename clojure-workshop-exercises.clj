@@ -663,3 +663,4 @@ silly-string
   (str name " (" icao ") is located at the coordinates: lat: " lat " lon: " lon))
 
 ; Exercise 3.01 -
+; (def airport2 {:name "Milan Malpensa Airport", :lat 45.63, :lon 8.723056, :icao "LIMC"})
