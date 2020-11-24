@@ -3,22 +3,19 @@
 (def steps (atom 0))
 (def steps-return (atom 0))
 
-
 (defn number-valid? [n]
   (cond
+    (not (number? n))
+    (throw (Exception. "Non-numeric input detected. Please enter an integer."))
+    
     (not (pos? n))
-    (do
-      (throw (Exception. "Number cannot be 0 or negative. Please try again."))
-    false)
+    (throw (Exception. "Number cannot be 0 or negative. Please try again."))
     
     (not (integer? n))
-    (do
-      (throw (Exception. "You input a floating point number. Please try again with an integer."))
-    false)
+    (throw (Exception. "You input a floating point number. Please try again with an integer."))
     
     :else
     true))
-   
 
 (defn collatz [n]
 ;; only calls function if n != 1
