@@ -605,14 +605,61 @@ silly-string
         data (get-in db [table :data])]
     (get data index-value)))
 
-(defn insert [table record id-key]
+(defn insert-preventing-overwrites [table record id-key]
   (let [db (read-db)
         new-db (update-in db [table :data] conj record)
         data-count (dec (count (get-in new-db [table :data])))]
     (if (contains? db table)
-      (str "Not overwriting existing table " table ".")
+      (str "Not overwriting existing table - " table ".")
       (write-db (update-in new-db [table :indexes id-key] assoc (id-key record) index)))))
 
-        
-        
-        
+;; Functions - Destructuring
+;; =========================
+; enables to access data in collections succinctly.
+
+;; Sequential Destructuring - applied to vectors and lists
+;; -------------------------------------------------------
+
+; without destructuring in a vector - long-hand way
+(def cities ["Birmingham" "London" "Manchester"])
+
+(let [city1 (first cities)
+      city2 (second cities)
+      city3 (last cities)]
+  (str "First city is " city1 ", second city is " city2 " and third city is " city3 "."))
+; => "First city is Birmingham, second city is London and third city is Manchester."
+
+; same result with destructuring: note the double square brackets
+; each new binding is mapped respectively from each member of the vector
+(let [[city1 city2 city3] cities]
+   (str "First city is " city1 ", second city is " city2 " and third city is " city3 "."))
+
+; can do the same with lists:
+(let [[a b c d] (range 4)] (println a b c d))
+; => 0 1 2 3
+; => nil
+
+;; Destructuring maps - Associative Destructuring
+;; ----------------------------------------------
+
+; long-hand way without destructuring
+(def airport-info {:name "Manchester Airport", :lat 53.353889, :lon -2.275, :icao "EGCC"})
+
+(let [lat (:lat airport-info)
+      lon (:lon airport-info)
+      name (:name airport-info)
+      icao (:icao airport-info)]
+  (str name " (" icao ") is located at the coordinates: lat: " lat " lon: " lon))
+
+; => "Manchester Airport (EGCC) is located at the coordinates: lat: 53.353889 lon: -2.275"
+
+;; same result with destructuring:
+(let [{lat :lat lon :lon name :name icao :icao} airport-info]
+  (str name " (" icao ") is located at the coordinates: lat: " lat " lon: " lon))
+; note bindings come before keywords
+
+; even more succinct - put down the keys you want to use:
+(let [ {:keys [lat lon name icao]} airport-info]
+  (str name " (" icao ") is located at the coordinates: lat: " lat " lon: " lon))
+
+; Exercise 3.01 -
