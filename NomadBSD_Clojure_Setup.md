@@ -145,7 +145,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'w0rp/ale'
 
 "Conjure
-Plug 'Olical/conjure', { 'tag': 'v4.8.0'}
+Plug 'Olical/conjure', { 'tag': 'v4.9.0'}
 
 "Rainbow Parentheses
 Plug 'junegunn/rainbow_parentheses.vim'
@@ -168,6 +168,9 @@ Plug 'morhetz/gruvbox'
 
 " Tender theme
 Plug 'jacoborus/tender.vim'
+
+" NeoSolarized theme
+Plug 'overcache/NeoSolarized'
 
 call plug#end()
 
@@ -266,8 +269,12 @@ let g:ale_fixers = {
 " Gruvbox
 let g:gruvbox_italic = 1
 let g:gruvbox_contrast_light = 'medium'
-set background=light
+set background=dark
 colorscheme gruvbox
+
+" Alternative colourschemes installed are tender and Neosolarized. Activate them with:
+" :colo NeoSolarized
+" :colo tender
 ```
 ### Save file, and exit
 ### Issue the following command to install the neovim plugins:
