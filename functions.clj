@@ -13,6 +13,13 @@
 
 (factorial 50)
 
+(defn input-name []
+  (println "What's your name?")
+  (let [name (read-line)]
+    (str "Hey, " name "!")))
+
+(input-name)
+
 (defn bmi
   "Calculates Body Mass Index (BMI)
   BMI = weight(kg) / (height(m) ^ 2)
