@@ -1,11 +1,11 @@
-# Set up Clojure development in Neovim (updated Oct 2020)
+# Set up Clojure development in Neovim (updated Feb 2021)
 ## On a fresh [NomadBSD](https://nomadbsd.org) installation. Should also apply to other FreeBSDs.
 ![Neovim running Conjure in NomadBSD](Clojure_Neovim_NomadBSD.png)
 [NomadBSD](https://nomadbsd.org) is a FreeBSD release running on the Openbox window manager.
 It is designed to run on a USB stick, but here I am personally running it in a virtual machine in [VirtualBox](https://www.virtualbox.org).
 I have also tested this on a hard disk installation.
 
-**(Update 07 Oct 2020 - new joker version 0.15.7. Also some notes on Paravim.)**
+**(Update 19 Feb 2020 - new conjure version 4.14.1, go version 1.16.)**
 
 The font shown in the screen shot above is "Source Code Pro Regular". In NomadBSD, this already has the Powerline symbols set up (the angular blue symbols in the status lines). If your setup looks odd, install the powerline-fonts package (**sudo pkg install powerline-fonts**), and change the font in your terminal.
 
@@ -74,10 +74,10 @@ wget https://github.com/candid82/joker/archive/v0.15.7.tar.gz
 tar xvf v0.15.7.tar.gz
 ```
 ### Install [Go Language](https://www.golang.org/dl)
-Download and extract go binaries (current version 1.15.2 at time of writing)
+Download and extract go binaries (current version 1.16 at time of writing)
 ```sh
-wget https://dl.google.com/go/go1.15.2.freebsd-amd64.tar.gz
-sudo tar -C /usr/local -xzf go1.15.2.freebsd-amd64.tar.gz
+wget https://dl.google.com/go/go1.16.freebsd-amd64.tar.gz
+sudo tar -C /usr/local -xzf go1.16.freebsd-amd64.tar.gz
 ```
 Add /usr/local/go/bin to PATH (either with command below,
 or manual editing of ~/.profile)
@@ -145,7 +145,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'w0rp/ale'
 
 "Conjure
-Plug 'Olical/conjure', { 'tag': 'v4.9.0'}
+Plug 'Olical/conjure', { 'tag': 'v4.14.1'}
 
 "Rainbow Parentheses
 Plug 'junegunn/rainbow_parentheses.vim'
@@ -295,6 +295,10 @@ clj -Sdeps '{:deps {nrepl {:mvn/version "0.7.0"} cider/cider-nrepl {:mvn/version
     -m nrepl.cmdline \
     --middleware '["cider.nrepl/cider-middleware"]' \
     --interactive
+```
+Or, if you use Leiningen, add to your project.clj
+```clojure
+:plugins [[cider/cider-nrepl "0.24.0"]]
 ```
 
 ## Summary - to use Conjure whenever you are editing a Clojure file:
