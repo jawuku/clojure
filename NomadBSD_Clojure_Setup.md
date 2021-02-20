@@ -5,7 +5,7 @@
 It is designed to run on a USB stick, but here I am personally running it in a virtual machine in [VirtualBox](https://www.virtualbox.org).
 I have also tested this on a hard disk installation.
 
-**(Update 19 Feb 2020 - new conjure version 4.14.1, go version 1.16.)**
+**(Update 20 Feb 2021 - new conjure version 4.14.1, go version 1.16.)**
 
 The font shown in the screen shot above is "Source Code Pro Regular". In NomadBSD, this already has the Powerline symbols set up (the angular blue symbols in the status lines). If your setup looks odd, install the powerline-fonts package (**sudo pkg install powerline-fonts**), and change the font in your terminal.
 
