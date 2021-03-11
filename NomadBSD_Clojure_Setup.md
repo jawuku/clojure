@@ -26,7 +26,7 @@ Things to add in the future (as I learn more of FreeBSD and Neovim)
 - [ ] Easymotion
 - [ ] Vim-sexp
 - [ ] Vim-clap
-- [ ] migrate to [Conquer of Completion (coc.nvim)](https://github.com/neoclide/coc.nvim)
+- [ ] migrate to [Conquer of Completion (coc.nvim) using coc-conjure plugin](https://github.com/jlesquembre/coc-conjure)
 
 On to the installation ...
 ## Update FreeBSD
