@@ -5,7 +5,7 @@
 It is designed to run on a USB stick, but here I am personally running it in a virtual machine in [VirtualBox](https://www.virtualbox.org).
 I have also tested this on a hard disk installation.
 
-**(Update 11 May 2021 - new conjure version 4.15.0, go version 1.16.4, joker 1.17.1)**
+**(Update 11 May 2021 - new conjure version 4.18.0, go version 1.16.4, joker 1.17.1)**
 
 The font shown in the screen shot above is "Source Code Pro Regular". In NomadBSD, this already has the Powerline symbols set up (the angular blue symbols in the status lines). If your setup looks odd, install the powerline-fonts package (**sudo pkg install powerline-fonts**), and change the font in your terminal.
 
@@ -145,7 +145,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'w0rp/ale'
 
 "Conjure
-Plug 'Olical/conjure', { 'tag': 'v4.15.0'}
+Plug 'Olical/conjure', { 'tag': 'v4.18.0'}
 
 "Rainbow Parentheses
 Plug 'junegunn/rainbow_parentheses.vim'
