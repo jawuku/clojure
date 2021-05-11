@@ -1,11 +1,11 @@
-# Set up Clojure development in Neovim (updated Feb 2021)
+# Set up Clojure development in Neovim (updated May 2021)
 ## On a fresh [NomadBSD](https://nomadbsd.org) installation. Should also apply to other FreeBSDs.
 ![Neovim running Conjure in NomadBSD](Clojure_Neovim_NomadBSD.png)
 [NomadBSD](https://nomadbsd.org) is a FreeBSD release running on the Openbox window manager.
 It is designed to run on a USB stick, but here I am personally running it in a virtual machine in [VirtualBox](https://www.virtualbox.org).
 I have also tested this on a hard disk installation.
 
-**(Update 11 Mar 2021 - new conjure version 4.15.0, go version 1.16.)**
+**(Update 11 May 2021 - new conjure version 4.15.0, go version 1.16.4, joker 1.17.1)**
 
 The font shown in the screen shot above is "Source Code Pro Regular". In NomadBSD, this already has the Powerline symbols set up (the angular blue symbols in the status lines). If your setup looks odd, install the powerline-fonts package (**sudo pkg install powerline-fonts**), and change the font in your terminal.
 
@@ -70,14 +70,14 @@ There are no binaries for FreeBSD, thus will have to install from source.
 Install latest version if different from below.
 ```sh
 cd ~/Downloads
-wget https://github.com/candid82/joker/archive/v0.15.7.tar.gz
-tar xvf v0.15.7.tar.gz
+wget https://github.com/candid82/joker/archive/refs/tags/v0.17.1.tar.gz
+tar xvf v0.17.1.tar.gz
 ```
 ### Install [Go Language](https://www.golang.org/dl)
-Download and extract go binaries (current version 1.16 at time of writing)
+Download and extract go binaries (current version 1.16.4 at time of writing)
 ```sh
-wget https://dl.google.com/go/go1.16.freebsd-amd64.tar.gz
-sudo tar -C /usr/local -xzf go1.16.freebsd-amd64.tar.gz
+wget https://golang.org/dl/go1.16.4.freebsd-amd64.tar.gz
+sudo tar -C /usr/local -xzf go1.16.4.freebsd-amd64.tar.gz
 ```
 Add /usr/local/go/bin to PATH (either with command below,
 or manual editing of ~/.profile)
